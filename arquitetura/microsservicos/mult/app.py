@@ -1,6 +1,6 @@
 from fastapi import FastAPI, HTTPException
 
-app = FastAPI(__name__)
+app = FastAPI()
 
 @app.get("/mult")
 def mult(op1: float, op2: float):
@@ -11,6 +11,3 @@ def mult(op1: float, op2: float):
 
     res['resultado'] = op1 * op2
     return res
-
-if __name__ == '__main__':
-    app.run('0.0.0.0', debug=True)
